@@ -14,11 +14,12 @@ This project is a PageRank Calculator web application that allows users to calcu
 
 ### Prerequisites
 
-You need a web server with PHP support to run this application.
+- Docker
+- `ddev` (see [DDEV documentation](https://ddev.readthedocs.io/en/stable/users/install/) for installation instructions)
 
 ### Installation
 
-1. Clone this repository to your web server's root directory.
+1. Clone this repository to your local machine.
 
     ```bash
     git clone https://github.com/friteuseb/pagerank_calc.git
@@ -30,10 +31,29 @@ You need a web server with PHP support to run this application.
     cd pagerank_calc
     ```
 
-3. Open the application in your web browser.
+3. Configure `ddev` for the project.
 
     ```bash
-    http://localhost/pagerank_calc
+    ddev config
+    ```
+
+    Follow the prompts to configure your project. Use the following settings:
+    ```
+    Project name (pagerank_calc):
+    Docroot location (current directory):
+    Project Type (php):
+    ```
+
+4. Start the `ddev` environment.
+
+    ```bash
+    ddev start
+    ```
+
+5. Access the application in your web browser.
+
+    ```bash
+    http://pagerank_calc.ddev.site
     ```
 
 ## Usage
@@ -73,4 +93,5 @@ This project is licensed under the MIT License.
 ## Acknowledgements
 
 - [D3.js](https://d3js.org/)
+- [DDEV](https://ddev.readthedocs.io/en/stable/)
 
