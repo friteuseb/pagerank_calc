@@ -21,19 +21,19 @@ You need a web server with PHP support to run this application.
 1. Clone this repository to your web server's root directory.
 
     ```bash
-    git clone https://github.com/yourusername/pagerank-calculator.git
+    git clone https://github.com/friteuseb/pagerank_calc.git
     ```
 
 2. Navigate to the directory.
 
     ```bash
-    cd pagerank-calculator
+    cd pagerank_calc
     ```
 
 3. Open the application in your web browser.
 
     ```bash
-    http://localhost/pagerank-calculator
+    http://localhost/pagerank_calc
     ```
 
 ## Usage
