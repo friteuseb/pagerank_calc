@@ -1,0 +1,31 @@
+# Ignore ddev folder
+.ddev
+.ddev-docker-compose*
+
+# Ignore node_modules
+node_modules
+
+# Ignore Composer dependencies
+vendor
+
+# Ignore Mac OS file system
+.DS_Store
+
+# Ignore PHPStorm files
+.idea
+
+# Ignore local environment variables
+.env
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore compiled files
+/build
+/dist
+
+# Ignore system files
+Thumbs.db
+
