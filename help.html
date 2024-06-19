@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - PageRank Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="aide-container">
+        <h1>Help - PageRank Calculator</h1>
+        <p>
+            PageRank is an algorithm used by Google to assess the relative importance of a webpage based on the number and quality of links pointing to it.
+        </p>
+        <h2>How does the PageRank calculation work?</h2>
+        <p>
+            The basic formula for calculating the PageRank of a page <em>P</em> is as follows:
+        </p>
+        <p>
+            <strong>PR(P) = (1 - d) / N + d * Σ (PR(P<sub>i</sub>) / L(P<sub>i</sub>))</strong>
+        </p>
+        <ul>
+            <li><strong>PR(P)</strong> : PageRank of page <em>P</em></li>
+            <li><strong>d</strong> : Damping factor (usually set to 0.85)</li>
+            <li><strong>N</strong> : Total number of pages</li>
+            <li><strong>Σ</strong> : Sum for all pages <em>P<sub>i</sub></em> pointing to <em>P</em></li>
+            <li><strong>PR(P<sub>i</sub>)</strong> : PageRank of page <em>P<sub>i</sub></em></li>
+            <li><strong>L(P<sub>i</sub>)</strong> : Number of outbound links from page <em>P<sub>i</sub></em></li>
+        </ul>
+        <p>
+            The damping factor <strong>d</strong> represents the probability that a user will continue clicking on links, rather than starting a new search from a new page. This factor is generally set to 0.85.
+        </p>
+        <h2>Example of Calculation</h2>
+        <p>
+            Suppose we have three pages: A, B, and C. Here is a simplified example calculation:
+        </p>
+        <ol>
+            <li><strong>Initialization:</strong> Suppose each page starts with a PageRank of 1.0.</li>
+            <li><strong>Calculation after one iteration:</strong></li>
+        </ol>
+        <p>
+            <strong>Page A:</strong><br>
+            PR(A) = (1 - 0.85) / 3 + 0.85 * (PR(C) / 1) = 0.05 + 0.85 * 1 = 0.9
+        </p>
+        <p>
+            <strong>Page B:</strong><br>
+            PR(B) = (1 - 0.85) / 3 + 0.85 * (PR(A) / 1) = 0.05 + 0.85 * 1 = 0.9
+        </p>
+        <p>
+            <strong>Page C:</strong><br>
+            PR(C) = (1 - 0.85) / 3 + 0.85 * (PR(B) / 1 + PR(A) / 1) = 0.05 + 0.85 * (1 + 1) = 1.8
+        </p>
+        <p>
+            These calculations are repeated several times until the values converge.
+        </p>
+        <p>
+            <a href="index.php">Back to the calculator</a>
+        </p>
+    </div>
+</body>
+</html>

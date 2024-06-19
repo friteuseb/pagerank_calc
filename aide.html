@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide - Calculateur de PageRank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="aide-container">
+        <h1>Aide - Calculateur de PageRank</h1>
+        <p>
+            Le PageRank est un algorithme utilisé par Google pour évaluer l'importance relative d'une page web en fonction du nombre et de la qualité des liens pointant vers elle.
+        </p>
+        <h2>Comment fonctionne le calcul du PageRank ?</h2>
+        <p>
+            La formule de base pour calculer le PageRank d'une page <em>P</em> est la suivante :
+        </p>
+        <p>
+            <strong>PR(P) = (1 - d) / N + d * Σ (PR(P<sub>i</sub>) / L(P<sub>i</sub>))</strong>
+        </p>
+        <ul>
+            <li><strong>PR(P)</strong> : PageRank de la page <em>P</em></li>
+            <li><strong>d</strong> : Facteur d'amortissement (généralement fixé à 0.85)</li>
+            <li><strong>N</strong> : Nombre total de pages</li>
+            <li><strong>Σ</strong> : Somme pour toutes les pages <em>P<sub>i</sub></em> pointant vers <em>P</em></li>
+            <li><strong>PR(P<sub>i</sub>)</strong> : PageRank de la page <em>P<sub>i</sub></em></li>
+            <li><strong>L(P<sub>i</sub>)</strong> : Nombre de liens sortants de la page <em>P<sub>i</sub></em></li>
+        </ul>
+        <p>
+            Le facteur d'amortissement <strong>d</strong> représente la probabilité qu'un utilisateur continue de cliquer sur les liens, plutôt que de commencer une nouvelle recherche à partir d'une nouvelle page. Ce facteur est généralement fixé à 0.85.
+        </p>
+        <h2>Exemple de calcul</h2>
+        <p>
+            Supposons que nous ayons trois pages : A, B, et C. Voici un exemple de calcul simplifié :
+        </p>
+        <ol>
+            <li><strong>Initialisation :</strong> Supposons que chaque page commence avec un PageRank de 1.0.</li>
+            <li><strong>Calcul après une itération :</strong></li>
+        </ol>
+        <p>
+            <strong>Page A :</strong><br>
+            PR(A) = (1 - 0.85) / 3 + 0.85 * (PR(C) / 1) = 0.05 + 0.85 * 1 = 0.9
+        </p>
+        <p>
+            <strong>Page B :</strong><br>
+            PR(B) = (1 - 0.85) / 3 + 0.85 * (PR(A) / 1) = 0.05 + 0.85 * 1 = 0.9
+        </p>
+        <p>
+            <strong>Page C :</strong><br>
+            PR(C) = (1 - 0.85) / 3 + 0.85 * (PR(B) / 1 + PR(A) / 1) = 0.05 + 0.85 * (1 + 1) = 1.8
+        </p>
+        <p>
+            Ces calculs sont répétés plusieurs fois jusqu'à ce que les valeurs convergent.
+        </p>
+        <p>
+            <a href="index.php">Retour au calculateur</a>
+        </p>
+    </div>
+</body>
+</html>
